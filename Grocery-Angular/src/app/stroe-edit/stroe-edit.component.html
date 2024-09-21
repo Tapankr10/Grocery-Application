@@ -1,0 +1,56 @@
+<div class="container mt-4" style="margin-bottom: 60px;">
+    <h3 class="text-center">Edit Store</h3>
+    <div class="card" style="width: 500px; margin: auto;">
+      <div class="card-body">
+        <form (ngSubmit)="save()" #storeForm="ngForm">
+          <div class="form-group">
+            <label for="storeId">Store ID</label>
+            <input
+              type="text"
+              id="storeId"
+              class="form-control"
+              [(ngModel)]="store.storeId"
+              name="storeId"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Store Name</label>
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              [(ngModel)]="store.name"
+              name="name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input
+              type="text"
+              id="location"
+              class="form-control"
+              [(ngModel)]="store.location"
+              name="location"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="contactNumber">Contact Number</label>
+            <input
+              type="text"
+              id="contactNumber"
+              class="form-control"
+              [(ngModel)]="store.contactNumber"
+              name="contactNumber"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+          <a href="#" class="btn btn-secondary ml-2" (click)="goBack()">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  

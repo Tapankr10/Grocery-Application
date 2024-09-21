@@ -1,0 +1,21 @@
+<div class="container mt-4">
+    <h3 class="text-center">Product Details</h3>
+    <div class="card">
+      <div class="card-body">
+        <dl class="row">
+          <dt class="col-sm-3">Product Name:</dt>
+          <dd class="col-sm-9">{{ product.name }}</dd>
+          <dt class="col-sm-3">Description:</dt>
+          <dd class="col-sm-9">{{ product.description }}</dd>
+          <dt class="col-sm-3">Price:</dt>
+          <dd class="col-sm-9">{{ product.price | currency }}</dd>
+          <dt class="col-sm-3">Image:</dt>
+          <dd class="col-sm-9">
+            <img [src]="product.imageUrl" alt="{{ product.name }}" style="width: 200px; height: auto;">
+          </dd>
+        </dl>
+        <a [routerLink]="['/producttable']" class="btn btn-secondary">Back to List</a>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,20 @@
+.card {
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    border-color: #007bff;
+    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.5);
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  .container
+  {
+    background-image: url('/public/back.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the image covers the entire background */
+    padding: 87px;
+  }

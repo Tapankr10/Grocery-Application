@@ -1,0 +1,22 @@
+.footer {
+    background-color:#455e4b;
+  }
+  
+  .footer-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .social-icons a {
+    font-size: 1.5rem;
+  }
+  
+  .social-icons a:hover {
+    color: orange;
+    text-decoration: none;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  

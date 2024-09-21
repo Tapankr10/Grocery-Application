@@ -1,0 +1,92 @@
+<h3>Edit Order</h3>
+<div class="container">
+  <form (ngSubmit)="updateOrder()" #orderForm="ngForm">
+    <!-- Order ID (Readonly) -->
+    <div class="form-group">
+      <label for="orderId">Order ID:</label>
+      <input
+        type="number"
+        id="orderId"
+        class="form-control"
+        name="orderId"
+        [(ngModel)]="order.orderId"
+        readonly
+      />
+    </div>
+
+    <!-- Customer ID -->
+    <div class="form-group">
+      <label for="customerId">Customer ID:</label>
+      <input
+        type="number"
+        id="customerId"
+        class="form-control"
+        name="customerId"
+        [(ngModel)]="order.customerId"
+        required
+        #customerId="ngModel"
+      />
+      <div *ngIf="customerId.invalid && customerId.touched" class="text-danger">
+        Customer ID is required.
+      </div>
+    </div>
+
+    <!-- Order Date -->
+    <div class="form-group">
+      <label for="orderDate">Order Date:</label>
+      <input
+        type="date"
+        id="orderDate"
+        class="form-control"
+        name="orderDate"
+        [(ngModel)]="order.orderDate"
+        required
+        #orderDate="ngModel"
+      />
+      <div *ngIf="orderDate.invalid && orderDate.touched" class="text-danger">
+        Order Date is required.
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <select
+        id="status"
+        class="form-control"
+        name="status"
+        [(ngModel)]="order.status"
+        required
+        #status="ngModel"
+      >
+        <option value="" disabled>Select Status</option>
+        <option value="Pending">Pending</option>
+        <option value="Packing Item">Packing Item</option>
+      </select>
+      <div *ngIf="status.invalid && status.touched" class="text-danger">
+        Status is required.
+      </div>
+    </div>
+
+    <!-- Delivery Staff (Optional) -->
+    <div class="form-group">
+      <label for="deliveryStaff">Delivery Staff ID:</label>
+      <input
+        type="number"
+        id="deliveryStaff"
+        class="form-control"
+        name="deliveryStaff"
+       
+      />
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="orderForm.invalid"
+    >
+      Update Order
+    </button>
+  </form>
+</div>

@@ -1,0 +1,64 @@
+/* src/app/components/order-item/order-item.component.css */
+
+.table th, .table td {
+    text-align: center; /* Center align text in table cells */
+  }
+  
+  .table {
+    background-color: #f8f9fa; /* Light background for the table */
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #e9ecef; /* Striped row colors */
+  }
+  
+  .table-bordered {
+    border: 1px solid #dee2e6; /* Border color for the table */
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d; /* Custom color for secondary buttons */
+    border: none; /* Remove border for better aesthetics */
+  }
+  
+  .btn-primary {
+    background-color: #007bff; /* Custom color for primary button */
+    border: none; /* Remove border for better aesthetics */
+  }
+  
+  .btn {
+    border-radius: 4px; /* Rounded corners for buttons */
+  }
+  /* src/app/components/order-item/order-item.component.css */
+
+/* Smaller buttons */
+.btn-sm {
+    padding: 0.25rem 0.5rem; /* Adjust padding for smaller buttons */
+    font-size: 0.875rem; /* Smaller font size */
+    line-height: 1.5; /* Adjust line height */
+  }
+  
+  /* Custom button styles */
+  .btn-outline-secondary {
+    color: #6c757d; /* Text color */
+    border-color: #6c757d; /* Border color */
+  }
+  
+  .btn-outline-secondary:hover {
+    color: #fff; /* Text color on hover */
+    background-color: #6c757d; /* Background color on hover */
+    border-color: #6c757d; /* Border color on hover */
+  }
+  
+  .btn-primary {
+    background-color: #007bff; /* Background color */
+    border: none; /* Remove border */
+    font-size: 1rem; /* Adjust font size */
+    padding: 0.5rem 1rem; /* Adjust padding */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    border: none; /* Remove border on hover */
+  }
+  

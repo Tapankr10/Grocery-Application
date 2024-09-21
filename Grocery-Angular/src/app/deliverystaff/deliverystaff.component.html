@@ -1,0 +1,103 @@
+<!-- <h3>Order Detail</h3>
+<div class="container">
+  
+  <div class="order-details">
+    <div class="form-group">
+      <label for="orderId">Order ID:</label>
+      <input type="number" id="orderId" class="form-control" [(ngModel)]="order.orderId" readonly />
+    </div>
+
+    <div class="form-group">
+      <label for="customerAddress">Customer Address:</label>
+       <input type="text" id="customerAddress" class="form-control" [(ngModel)]="order.customer.address" readonly /> 
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="status">Change Status:</label>
+    <select id="status" class="form-control" [(ngModel)]="order.status" (change)="onStatusChange($event)">
+      <option value="Pending">Pending</option>
+      <option value="Out for Delivery">Out for Delivery</option>
+      <option value="Completed">Completed</option>
+    </select>
+  </div>
+
+
+  <div class="form-group" *ngIf="order.status === 'Completed'">
+    <label for="confirmationCode">Enter Confirmation Code:</label>
+    <input
+      type="number"
+      id="confirmationCode"
+      class="form-control"
+      [(ngModel)]="confirmationCode"
+      required
+      (ngModelChange)="validateConfirmationCode()"
+    />
+    <div *ngIf="!isValidCode && confirmationCodeTouched" class="text-danger">
+      Confirmation code must be a 4-digit number and a multiple of 3.
+    </div>
+  </div>
+
+
+  <button class="btn btn-primary" [disabled]="isCompletedInvalid()" (click)="updateOrderStatus()">Update Order Status</button>
+</div> -->
+<h3 class="text-center">Order List</h3>
+<div class="container" style="margin-bottom: 50px;">
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th>Order ID</th>
+        <th>Customer Name</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+        <th>Order Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of data">
+        <td>{{ order.orderId }}</td>
+        <td>{{ order.customerId }}</td>
+        <td>{{ customers[order.customerId]?.address }}</td>
+        <td>{{ customers[order.customerId]?.phoneNumber }}</td>
+        <td>{{ order.orderDate | date: 'short' }}</td>
+        <td>
+          <div class="form-group">
+            <label for="status">Change Status:</label>
+            <select id="status" class="form-control" 
+                    [(ngModel)]="order.status"
+                    (change)="onStatusChange(order)">
+              <option value="Pending">Pending</option>
+              <option value="Out for Delivery">Out for Delivery</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+
+          <!-- Confirmation Code (only visible when status is "Completed") -->
+          <div class="form-group mt-2" *ngIf="order.status === 'Completed'">
+            <label for="confirmationCode">Enter Confirmation Code:</label>
+            <input
+              type="number"
+              id="confirmationCode"
+              class="form-control"
+              [(ngModel)]="confirmationCodes[order.orderId]"
+              (ngModelChange)="validateConfirmationCode(order.orderId)"
+            />
+            <div *ngIf="isCompletedInvalid(order.orderId)" class="text-danger">
+              Confirmation code must be a 4-digit number.
+            </div>
+          </div>
+        </td>
+        <td>
+          <!-- Update button will always be enabled -->
+          <button class="btn btn-primary"
+                  (click)="handleUpdate(order)">
+            Update
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,44 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .card-header {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+  
+  .badge-warning {
+    background-color: #ffc107;
+  }
+  
+  .badge-info {
+    background-color: #17a2b8;
+  }
+  
+  .badge-success {
+    background-color: #28a745;
+  }
+  
+  .badge-danger {
+    background-color: #dc3545;
+  }
+  
+  .badge-secondary {
+    background-color: #6c757d;
+  }
+  
+  .table {
+    margin-top: 20px;
+  }
+  
+  .table thead th {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
